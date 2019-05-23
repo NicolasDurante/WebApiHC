@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HistoriaClinicaModelStoreContainer" CdmEntityContainer="HistoriaClinicaEntities">
+    <EntitySetMapping Name="afiliacions">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.afiliacion">
+        <MappingFragment StoreEntitySet="afiliacion">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Fecha_Vencimiento" ColumnName="Fecha_Vencimiento" />
+          <ScalarProperty Name="Num_Afiliado" ColumnName="Num_Afiliado" />
+          <ScalarProperty Name="ObraSocial_id" ColumnName="ObraSocial_id" />
+          <ScalarProperty Name="Persona_Persona_id" ColumnName="Persona_Persona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="antecedentes_familiares">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.antecedentes_familiares">
+        <MappingFragment StoreEntitySet="antecedentes_familiares">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
+          <ScalarProperty Name="Cancer" ColumnName="Cancer" />
+          <ScalarProperty Name="Obesidad" ColumnName="Obesidad" />
+          <ScalarProperty Name="Cardiovasculares" ColumnName="Cardiovasculares" />
+          <ScalarProperty Name="Alcoholismo" ColumnName="Alcoholismo" />
+          <ScalarProperty Name="Muertes_Prematuras" ColumnName="Muertes_Prematuras" />
+          <ScalarProperty Name="Paciente_idPaciente" ColumnName="Paciente_idPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="antecedentes_patologicos">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.antecedentes_patologicos">
+        <MappingFragment StoreEntitySet="antecedentes_patologicos">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="Hepatitis" ColumnName="Hepatitis" />
+          <ScalarProperty Name="Diabetes" ColumnName="Diabetes" />
+          <ScalarProperty Name="Hipertension" ColumnName="Hipertension" />
+          <ScalarProperty Name="Epilepsia" ColumnName="Epilepsia" />
+          <ScalarProperty Name="ETS" ColumnName="ETS" />
+          <ScalarProperty Name="Asma" ColumnName="Asma" />
+          <ScalarProperty Name="Alergias" ColumnName="Alergias" />
+          <ScalarProperty Name="Antecedentes_Quirugicos" ColumnName="Antecedentes_Quirugicos" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Paciente_idPaciente" ColumnName="Paciente_idPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="antecedentes_psicologicos">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.antecedentes_psicologicos">
+        <MappingFragment StoreEntitySet="antecedentes_psicologicos">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="Anciedad" ColumnName="Anciedad" />
+          <ScalarProperty Name="Depresion" ColumnName="Depresion" />
+          <ScalarProperty Name="Bipolaridad" ColumnName="Bipolaridad" />
+          <ScalarProperty Name="Esquizofrenia" ColumnName="Esquizofrenia" />
+          <ScalarProperty Name="Fobias" ColumnName="Fobias" />
+          <ScalarProperty Name="Psicosis" ColumnName="Psicosis" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Paciente_idPaciente" ColumnName="Paciente_idPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="barrios">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.barrio">
+        <MappingFragment StoreEntitySet="barrio">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Barrio1" ColumnName="Barrio" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="Persona_Persona_id" ColumnName="Persona_Persona_id" />
+          <ScalarProperty Name="Ciudad_Persona_id" ColumnName="Ciudad_Persona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calles">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.calle">
+        <MappingFragment StoreEntitySet="calle">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Calle1" ColumnName="Calle" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Persona_Persona_id" ColumnName="Persona_Persona_id" />
+          <ScalarProperty Name="Barrio_Persona_id" ColumnName="Barrio_Persona_id" />
+          <ScalarProperty Name="Barrio_Persona_Persona_id" ColumnName="Barrio_Persona_Persona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ciudads">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.ciudad">
+        <MappingFragment StoreEntitySet="ciudad">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Nombre_Ciudad" ColumnName="Nombre_Ciudad" />
+          <ScalarProperty Name="Provincia_Persona_id" ColumnName="Provincia_Persona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doctors">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.doctor">
+        <MappingFragment StoreEntitySet="doctor">
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Num_Matricula" ColumnName="Num_Matricula" />
+          <ScalarProperty Name="Cuit_Cuil" ColumnName="Cuit/Cuil" />
+          <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+          <ScalarProperty Name="Persona_Persona_id" ColumnName="Persona_Persona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domicilios">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.domicilio">
+        <MappingFragment StoreEntitySet="domicilio">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Barrio" ColumnName="Barrio" />
+          <ScalarProperty Name="Prov_Residencia" ColumnName="Prov_Residencia" />
+          <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+          <ScalarProperty Name="Codigo_Postal" ColumnName="Codigo_Postal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emergencias">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.emergencia">
+        <MappingFragment StoreEntitySet="emergencia">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Tel_Emergencia" ColumnName="Tel_Emergencia" />
+          <ScalarProperty Name="Nombre_Emergencia" ColumnName="Nombre_Emergencia" />
+          <ScalarProperty Name="Apellido_Emerg" ColumnName="Apellido_Emerg" />
+          <ScalarProperty Name="Direccion_Emerg" ColumnName="Direccion_Emerg" />
+          <ScalarProperty Name="Persona_Persona_id" ColumnName="Persona_Persona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="habitos_toxicos">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.habitos_toxicos">
+        <MappingFragment StoreEntitySet="habitos_toxicos">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="Alcohol" ColumnName="Alcohol" />
+          <ScalarProperty Name="Tabaco" ColumnName="Tabaco" />
+          <ScalarProperty Name="Aspirinas" ColumnName="Aspirinas" />
+          <ScalarProperty Name="Tranquilizantes" ColumnName="Tranquilizantes" />
+          <ScalarProperty Name="Excitantes" ColumnName="Excitantes" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Paciente_idPaciente" ColumnName="Paciente_idPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="institucions">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.institucion">
+        <MappingFragment StoreEntitySet="institucion">
+          <ScalarProperty Name="Doctor_id" ColumnName="Doctor_id" />
+          <ScalarProperty Name="Institucion1" ColumnName="Institucion" />
+          <ScalarProperty Name="Calle_Institucion" ColumnName="Calle_Institucion" />
+          <ScalarProperty Name="Num_calle" ColumnName="Num_calle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="institucion_has_doctor">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.institucion_has_doctor">
+        <MappingFragment StoreEntitySet="institucion_has_doctor">
+          <ScalarProperty Name="Institucion_Doctor_id" ColumnName="Institucion_Doctor_id" />
+          <ScalarProperty Name="Doctor_Doctor_Id" ColumnName="Doctor_Doctor_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="obrasocials">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.obrasocial">
+        <MappingFragment StoreEntitySet="obrasocial">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Nombre_O_Social" ColumnName="Nombre_O.Social" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pacientes">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.paciente">
+        <MappingFragment StoreEntitySet="paciente">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="PesoActual" ColumnName="PesoActual" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="GrupoSanguineo" ColumnName="GrupoSanguineo" />
+          <ScalarProperty Name="Peso_Habitual" ColumnName="Peso_Habitual" />
+          <ScalarProperty Name="CreenciaReligiosa" ColumnName="CreenciaReligiosa" />
+          <ScalarProperty Name="Vacunas_Completo" ColumnName="Vacunas_Completo" />
+          <ScalarProperty Name="Vacunas_faltantes" ColumnName="Vacunas_faltantes" />
+          <ScalarProperty Name="Persona_Persona_id" ColumnName="Persona_Persona_id" />
+          <ScalarProperty Name="TomaMedicamentos" ColumnName="TomaMedicamentos" />
+          <ScalarProperty Name="Pacientecol" ColumnName="Pacientecol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personas">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.persona">
+        <MappingFragment StoreEntitySet="persona">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Estado_Civil" ColumnName="Estado_Civil" />
+          <ScalarProperty Name="E_Mail" ColumnName="E-Mail" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="TelFijo" ColumnName="TelFijo" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Prov_Nacimiento" ColumnName="Prov_Nacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provincias">
+      <EntityTypeMapping TypeName="HistoriaClinicaModel.provincia">
+        <MappingFragment StoreEntitySet="provincia">
+          <ScalarProperty Name="Persona_id" ColumnName="Persona_id" />
+          <ScalarProperty Name="Prov_Residencia" ColumnName="Prov_Residencia" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

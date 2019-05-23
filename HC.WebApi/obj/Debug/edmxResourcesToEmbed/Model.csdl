@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HistoriaClinicaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="afiliacion">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha_Vencimiento" Type="DateTime" Precision="0" />
+    <Property Name="Num_Afiliado" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="ObraSocial_id" Type="Int32" Nullable="false" />
+    <Property Name="Persona_Persona_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="antecedentes_familiares">
+    <Key>
+      <PropertyRef Name="idPaciente" />
+    </Key>
+    <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Diabetes" Type="Int16" Nullable="false" />
+    <Property Name="Cancer" Type="Int16" Nullable="false" />
+    <Property Name="Obesidad" Type="Int16" Nullable="false" />
+    <Property Name="Cardiovasculares" Type="Int16" Nullable="false" />
+    <Property Name="Alcoholismo" Type="Int16" Nullable="false" />
+    <Property Name="Muertes_Prematuras" Type="Int16" Nullable="false" />
+    <Property Name="Paciente_idPaciente" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="antecedentes_patologicos">
+    <Key>
+      <PropertyRef Name="idPaciente" />
+    </Key>
+    <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hepatitis" Type="Int16" Nullable="false" />
+    <Property Name="Diabetes" Type="Int16" Nullable="false" />
+    <Property Name="Hipertension" Type="Int16" Nullable="false" />
+    <Property Name="Epilepsia" Type="Int16" Nullable="false" />
+    <Property Name="ETS" Type="Int16" Nullable="false" />
+    <Property Name="Asma" Type="Int16" Nullable="false" />
+    <Property Name="Alergias" Type="Int16" Nullable="false" />
+    <Property Name="Antecedentes_Quirugicos" Type="Int16" Nullable="false" />
+    <Property Name="Otros" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paciente_idPaciente" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="antecedentes_psicologicos">
+    <Key>
+      <PropertyRef Name="idPaciente" />
+    </Key>
+    <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Anciedad" Type="Int16" Nullable="false" />
+    <Property Name="Depresion" Type="Int16" Nullable="false" />
+    <Property Name="Bipolaridad" Type="Int16" Nullable="false" />
+    <Property Name="Esquizofrenia" Type="Int16" Nullable="false" />
+    <Property Name="Fobias" Type="Int16" Nullable="false" />
+    <Property Name="Psicosis" Type="Int16" Nullable="false" />
+    <Property Name="Otros" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paciente_idPaciente" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="barrio">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+      <PropertyRef Name="Persona_Persona_id" />
+      <PropertyRef Name="Ciudad_Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barrio1" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Localidad" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Persona_Persona_id" Type="Int32" Nullable="false" />
+    <Property Name="Ciudad_Persona_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="calle">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+      <PropertyRef Name="Persona_Persona_id" />
+      <PropertyRef Name="Barrio_Persona_id" />
+      <PropertyRef Name="Barrio_Persona_Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Calle1" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Numero" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Persona_Persona_id" Type="Int32" Nullable="false" />
+    <Property Name="Barrio_Persona_id" Type="Int32" Nullable="false" />
+    <Property Name="Barrio_Persona_Persona_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ciudad">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+      <PropertyRef Name="Provincia_Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Ciudad" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Provincia_Persona_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="doctor">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+      <PropertyRef Name="Persona_Persona_id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Num_Matricula" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cuit_Cuil" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Especialidad" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Persona_Persona_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="domicilio">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Calle" Type="String" MaxLength="45" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Numero" Type="Int32" />
+    <Property Name="Barrio" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prov_Residencia" Type="String" MaxLength="45" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Localidad" Type="String" MaxLength="45" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Codigo_Postal" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="emergencia">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Tel_Emergencia" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nombre_Emergencia" Type="String" MaxLength="45" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Apellido_Emerg" Type="String" MaxLength="45" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Direccion_Emerg" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Persona_Persona_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="habitos_toxicos">
+    <Key>
+      <PropertyRef Name="idPaciente" />
+    </Key>
+    <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Alcohol" Type="Int16" Nullable="false" />
+    <Property Name="Tabaco" Type="Int16" Nullable="false" />
+    <Property Name="Aspirinas" Type="Int16" Nullable="false" />
+    <Property Name="Tranquilizantes" Type="Int16" Nullable="false" />
+    <Property Name="Excitantes" Type="Int16" Nullable="false" />
+    <Property Name="Otros" Type="Int16" Nullable="false" />
+    <Property Name="Paciente_idPaciente" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="institucion">
+    <Key>
+      <PropertyRef Name="Doctor_id" />
+    </Key>
+    <Property Name="Doctor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Institucion1" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="Calle_Institucion" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="Num_calle" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="institucion_has_doctor">
+    <Key>
+      <PropertyRef Name="Institucion_Doctor_id" />
+      <PropertyRef Name="Doctor_Doctor_Id" />
+    </Key>
+    <Property Name="Institucion_Doctor_id" Type="Int32" Nullable="false" />
+    <Property Name="Doctor_Doctor_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="obrasocial">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_O_Social" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="paciente">
+    <Key>
+      <PropertyRef Name="idPaciente" />
+      <PropertyRef Name="Persona_Persona_id" />
+    </Key>
+    <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PesoActual" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Altura" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GrupoSanguineo" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Peso_Habitual" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreenciaReligiosa" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Vacunas_Completo" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Vacunas_faltantes" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="Persona_Persona_id" Type="Int32" Nullable="false" />
+    <Property Name="TomaMedicamentos" Type="Int16" Nullable="false" />
+    <Property Name="Pacientecol" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DNI" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="45" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Edad" Type="Int32" Nullable="false" />
+    <Property Name="Sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Estado_Civil" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="E_Mail" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Celular" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelFijo" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nacionalidad" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Prov_Nacimiento" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="provincia">
+    <Key>
+      <PropertyRef Name="Persona_id" />
+    </Key>
+    <Property Name="Persona_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prov_Residencia" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodigoPostal" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HistoriaClinicaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="afiliacions" EntityType="Self.afiliacion" />
+    <EntitySet Name="antecedentes_familiares" EntityType="Self.antecedentes_familiares" />
+    <EntitySet Name="antecedentes_patologicos" EntityType="Self.antecedentes_patologicos" />
+    <EntitySet Name="antecedentes_psicologicos" EntityType="Self.antecedentes_psicologicos" />
+    <EntitySet Name="barrios" EntityType="Self.barrio" />
+    <EntitySet Name="calles" EntityType="Self.calle" />
+    <EntitySet Name="ciudads" EntityType="Self.ciudad" />
+    <EntitySet Name="doctors" EntityType="Self.doctor" />
+    <EntitySet Name="domicilios" EntityType="Self.domicilio" />
+    <EntitySet Name="emergencias" EntityType="Self.emergencia" />
+    <EntitySet Name="habitos_toxicos" EntityType="Self.habitos_toxicos" />
+    <EntitySet Name="institucions" EntityType="Self.institucion" />
+    <EntitySet Name="institucion_has_doctor" EntityType="Self.institucion_has_doctor" />
+    <EntitySet Name="obrasocials" EntityType="Self.obrasocial" />
+    <EntitySet Name="pacientes" EntityType="Self.paciente" />
+    <EntitySet Name="personas" EntityType="Self.persona" />
+    <EntitySet Name="provincias" EntityType="Self.provincia" />
+  </EntityContainer>
+</Schema>
